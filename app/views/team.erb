@@ -2,7 +2,9 @@
 
 <h2>Team Motto: <%=@team[:motto]%></h2>
 
-  <h2>Hero<%= index+1%></h2>
-<p><label>Hero's Name: <inputn id="member1_name" type="text" name="team[members][][name]"></label><br>
-  <label>Hero's Power: <input id="member1_power" type="text" name="team[members][][power]"></label><br>
-  <label>Hero's Biography: <input id="member1_bio" type="text" name="team[members][][bio]"></label></p>
+<%@members.each_with_index do |member, index|%>
+  <h2>Hero <%=index+1%></h2>
+  <p>Hero's Name: <%=member[:name]%><br>
+  Hero's Power: <%=member[:power]%><br>
+  Hero's Biography: <%=member[:bio]%></p>
+  <%end%>
